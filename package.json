@@ -1,0 +1,32 @@
+{
+  "name": "@pipeworx/mcp-la-metro",
+  "version": "0.1.0",
+  "description": "LA Metro (LACMTA) MCP — routes, stops and live service cancellations for",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "bin": {
+    "mcp-la-metro": "bin/cli.js"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "la-metro"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-la-metro.git"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-8813b8c4aa44182afcbd51acca32f82cc38ab15d89e22cf7ee3ff305e015a35e",
+    "sourceCommit": "b0fb3c31386cf0256dcf1e2f1b3440435a87ec35"
+  }
+}
