@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-la-metro",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "LA Metro (LACMTA) MCP — routes, stops and live service cancellations for",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-8813b8c4aa44182afcbd51acca32f82cc38ab15d89e22cf7ee3ff305e015a35e",
-    "sourceCommit": "b0fb3c31386cf0256dcf1e2f1b3440435a87ec35"
+    "sourceHash": "v1-ba65c0bd4da82b05aece28f96ad646f3b9bc7b877f3f63823732f2c363067246",
+    "sourceCommit": "1064560fd9dcd0d6fc2606298c2ba244b3a1fbeb"
   }
 }
