@@ -1,7 +1,7 @@
 {
   "name": "@pipeworx/mcp-la-metro",
-  "version": "0.1.1",
-  "description": "LA Metro (LACMTA) MCP — routes, stops and live service cancellations for",
+  "version": "0.1.2",
+  "description": "LA Metro (LACMTA) MCP — routes, stops and live service cancellations for Los Angeles County Metro bus and rail, from Metro's own open API.",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-ba65c0bd4da82b05aece28f96ad646f3b9bc7b877f3f63823732f2c363067246",
-    "sourceCommit": "1064560fd9dcd0d6fc2606298c2ba244b3a1fbeb"
+    "sourceHash": "v1-5eb94500c6ba6769a7e868ce8c7052644bdb89fc042fcdfd8b538d568e297dd8",
+    "sourceCommit": "33741fe6d9ba71856e73fa683c73572d1ddf2e93"
   }
 }
