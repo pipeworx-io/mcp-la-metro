@@ -1,0 +1,80 @@
+[
+  {
+    "name": "lametro_routes",
+    "description": "Every LA Metro bus or rail route, with its route code, short and long name, direction description and map colour. AUTHORITATIVE for \"what routes does LA Metro run\" — sourced from LACMTA's own API, not a third-party scrape. Use the returned route_code as input to lametro_route_stops.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "agency": {
+          "type": "string",
+          "description": "'LACMTA' for bus (default, ~124 routes) or 'LACMTA_Rail' for the rail and busway lines (A/B/C/D/E/K, ~6)."
+        },
+        "search": {
+          "type": "string",
+          "description": "Optional case-insensitive filter over route name and description (e.g. \"Wilshire\", \"Rapid\")."
+        }
+      }
+    }
+  },
+  {
+    "name": "lametro_route_stops",
+    "description": "Every stop served by one LA Metro route, in running order, with stop id, name, direction and service day type. AUTHORITATIVE for \"which stops does route N serve\" and for turning a route into stop ids you can look up with lametro_stop.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "route_code": {
+          "type": "string",
+          "description": "Route code from lametro_routes — a number for bus (e.g. \"10\", \"720\"), or a line name for rail (e.g. \"Metro A-Line\")."
+        },
+        "agency": {
+          "type": "string",
+          "description": "'LACMTA' (bus, default) or 'LACMTA_Rail'."
+        },
+        "direction_id": {
+          "type": "number",
+          "description": "Optional: keep only direction 0 or 1."
+        }
+      },
+      "required": [
+        "route_code"
+      ]
+    }
+  },
+  {
+    "name": "lametro_stop",
+    "description": "One LA Metro stop by stop id — coordinates, name, and the accessibility and zone attributes LACMTA publishes for it. Returns GeoJSON properties flattened for reading.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "stop_id": {
+          "type": "string",
+          "description": "Numeric stop id, as returned by lametro_route_stops (e.g. \"3202\")."
+        },
+        "agency": {
+          "type": "string",
+          "description": "'LACMTA' (bus, default) or 'LACMTA_Rail'."
+        }
+      },
+      "required": [
+        "stop_id"
+      ]
+    }
+  },
+  {
+    "name": "lametro_service_cancellations",
+    "description": "Trips LA Metro has canceled on the current service day, counted per route. This is LIVE operational data and the one real-time signal LACMTA publishes publicly — AUTHORITATIVE for \"is LA Metro dropping trips on my line today\", which no schedule or GTFS feed can answer. Sorted worst-affected first.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "route_code": {
+          "type": "string",
+          "description": "Optional: report only this route code (e.g. \"251\"). Omit for every affected route."
+        },
+        "min_canceled": {
+          "type": "number",
+          "description": "Optional: only report routes with at least this many canceled trips."
+        }
+      }
+    }
+  }
+]
